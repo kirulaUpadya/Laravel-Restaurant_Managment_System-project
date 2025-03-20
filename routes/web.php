@@ -22,6 +22,8 @@ route::get('/update_food/{id}', [AdminController::class, 'update_food']);
 
 route::post('/edit_food/{id}', [AdminController::class, 'edit_food']);
 
+route::post('/add_cart/{id}', [HomeController::class, 'add_cart']);
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

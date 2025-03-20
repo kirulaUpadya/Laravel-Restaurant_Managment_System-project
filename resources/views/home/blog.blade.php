@@ -16,13 +16,17 @@
               <p class="text-white">{{$data->detail}} </p>
             </div>
 
-            <form action="">
+            <form action="{{url('add_cart', $data->id)}}" method="post">
 
-              <input type="number" min="1">
+              @csrf
+
+              <input name="qty" value="1" type="number" min="1" required>
 
               <input class="btn btn-info" type="submit" value="Add to Cart">
 
             </form>
+
+            <br /><br /><br />
 
 
           </div>
