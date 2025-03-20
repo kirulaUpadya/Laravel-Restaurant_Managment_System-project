@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
+
 use App\Models\User;
+
+use App\Models\Food;
+
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -17,13 +22,17 @@ class HomeController extends Controller
             if ($usertype == 'admin') {
                 return view('admin.index');
             } elseif ($usertype == 'user') {
-                return view('home.index');
+                $data = Food::all();
+
+                return view('home.index', compact('data'));
             }
         }
     }
 
     public function my_home()
     {
-        return view('home.index');
+        $data = Food::all();
+
+        return view('home.index', compact('data'));
     }
 }

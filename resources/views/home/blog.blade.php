@@ -1,84 +1,34 @@
 <div id="blog" class="py-5 text-center container-fluid bg-dark text-light wow fadeIn">
-  <h2 class="py-5 section-title">EVENTS AT THE FOOD HUT</h2>
-  <div class="row justify-content-center">
-    <div class="mb-5 col-sm-7 col-md-4">
-      <ul class="mb-3 nav nav-pills nav-justified" id="pills-tab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#foods" role="tab" aria-controls="pills-home" aria-selected="true">Foods</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#juices" role="tab" aria-controls="pills-profile" aria-selected="false">Juices</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+  <h2 class="py-5 section-title">Our All Foods</h2>
+
   <div class="tab-content" id="pills-tabContent">
     <div class="tab-pane fade show active" id="foods" role="tabpanel" aria-labelledby="pills-home-tab">
       <div class="row">
+
+        @foreach($data as $data)
+
         <div class="col-md-4">
           <div class="my-3 bg-transparent border card my-md-0">
-            <img src="assets/imgs/blog-1.jpg" alt="template by DevCRID http://www.devcrud.com/" class="rounded-0 card-img-top mg-responsive">
+            <img height="350" src="food_img/{{$data->image}}" class="rounded-0 card-img-top mg-responsive">
             <div class="card-body">
-              <h1 class="mb-4 text-center"><a href="#" class="badge badge-primary">$5</a></h1>
-              <h4 class="pt20 pb20">Reiciendis Laborum </h4>
-              <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident illum officiis fugit laudantium voluptatem sit iste delectus qui ex. </p>
+              <h1 class="mb-4 text-center"><a href="#" class="badge badge-primary">{{$data->price}}</a></h1>
+              <h4 class="pt20 pb20">{{$data->title}} </h4>
+              <p class="text-white">{{$data->detail}} </p>
             </div>
+
+            <form action="">
+
+              <input type="number" min="1">
+
+              <input class="btn btn-info" type="submit" value="Add to Cart">
+
+            </form>
+
+
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="my-3 bg-transparent border card my-md-0">
-            <img src="assets/imgs/blog-2.jpg" alt="template by DevCRID http://www.devcrud.com/" class="rounded-0 card-img-top mg-responsive">
-            <div class="card-body">
-              <h1 class="mb-4 text-center"><a href="#" class="badge badge-primary">$12</a></h1>
-              <h4 class="pt20 pb20">Adipisci Totam</h4>
-              <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident illum officiis fugit laudantium voluptatem sit iste delectus qui ex. </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="my-3 bg-transparent border card my-md-0">
-            <img src="assets/imgs/blog-3.jpg" alt="template by DevCRID http://www.devcrud.com/" class="rounded-0 card-img-top mg-responsive">
-            <div class="card-body">
-              <h1 class="mb-4 text-center"><a href="#" class="badge badge-primary">$8</a></h1>
-              <h4 class="pt20 pb20">Dicta Deserunt</h4>
-              <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident illum officiis fugit laudantium voluptatem sit iste delectus qui ex. </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="tab-pane fade" id="juices" role="tabpanel" aria-labelledby="pills-profile-tab">
-      <div class="row">
-        <div class="my-3 col-md-4 my-md-0">
-          <div class="bg-transparent border card">
-            <img src="assets/imgs/blog-4.jpg" alt="template by DevCRID http://www.devcrud.com/" class="rounded-0 card-img-top mg-responsive">
-            <div class="card-body">
-              <h1 class="mb-4 text-center"><a href="#" class="badge badge-primary">$15</a></h1>
-              <h4 class="pt20 pb20">Consectetur Adipisicing Elit</h4>
-              <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident illum officiis fugit laudantium voluptatem sit iste delectus qui ex. </p>
-            </div>
-          </div>
-        </div>
-        <div class="my-3 col-md-4 my-md-0">
-          <div class="bg-transparent border card">
-            <img src="assets/imgs/blog-5.jpg" alt="template by DevCRID http://www.devcrud.com/" class="rounded-0 card-img-top mg-responsive">
-            <div class="card-body">
-              <h1 class="mb-4 text-center"><a href="#" class="badge badge-primary">$29</a></h1>
-              <h4 class="pt20 pb20">Ullam Laboriosam</h4>
-              <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident illum officiis fugit laudantium voluptatem sit iste delectus qui ex. </p>
-            </div>
-          </div>
-        </div>
-        <div class="my-3 col-md-4 my-md-0">
-          <div class="bg-transparent border card">
-            <img src="assets/imgs/blog-6.jpg" alt="template by DevCRID http://www.devcrud.com/" class="rounded-0 card-img-top mg-responsive">
-            <div class="card-body">
-              <h1 class="mb-4 text-center"><a href="#" class="badge badge-primary">$3</a></h1>
-              <h4 class="pt20 pb20">Fugit Ipsam</h4>
-              <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident illum officiis fugit laudantium voluptatem sit iste delectus qui ex. </p>
-            </div>
-          </div>
-        </div>
+        @endforeach
+
       </div>
     </div>
   </div>
