@@ -66,6 +66,8 @@ class HomeController extends Controller
 
             $data->quantity = $request->qty;
 
+            $data->userid = Auth::id();
+
             $data->save();
 
             return redirect()->back();
