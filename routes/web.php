@@ -26,6 +26,8 @@ route::post('/add_cart/{id}', [HomeController::class, 'add_cart']);
 
 route::get('/my_cart', [HomeController::class, 'my_cart']);
 
+route::get('/remove_cart/{id}', [HomeController::class, 'remove_cart']);
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
