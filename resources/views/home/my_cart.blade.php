@@ -103,6 +103,12 @@
         <th>Remove</th>
       </tr>
 
+      <?php
+
+      $tatal_price = 0;
+
+      ?>
+
       @foreach($data as $data)
       <tr>
         <td>{{$data->title}}</td>
@@ -115,9 +121,17 @@
           <a onclick="return confirm('Are you sure to remove?')" class="btn btn-danger" href="{{url('remove_cart', $data->id)}}">Remove</a>
         </td>
       </tr>
+
+      <?php
+
+      $tatal_price = $tatal_price + $data->price;
+
+      ?>
       @endforeach
 
     </table>
+
+    <h3>Total Price: ${{$tatal_price}}</h3>
 
   </div>
 
