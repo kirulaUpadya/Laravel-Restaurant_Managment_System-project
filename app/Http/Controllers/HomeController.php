@@ -28,8 +28,18 @@ class HomeController extends Controller
             $usertype = Auth::user()->usertype;
 
             if ($usertype == 'admin') {
-                return view('admin.index');
+
+                $total_user = User::where('usertype', '=', 'user')->count();
+
+                $total_food = Food::count();
+
+                $total_order = Order::count();
+
+                $total_delivered = Order::where('delivery_status', '=', 'Delivered')->count();
+
+                return view('admin.index', compact('total_user', 'total_food', 'total_order', 'total_delivered'));
             } elseif ($usertype == 'user') {
+
                 $data = Food::all();
 
                 return view('home.index', compact('data'));
