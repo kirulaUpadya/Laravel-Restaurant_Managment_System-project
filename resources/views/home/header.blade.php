@@ -18,13 +18,13 @@
         <a class="nav-link" href="#book-table">Book-Table</a>
       </li>
     </ul>
-    <a class="m-auto navbar-brand" href="#">
+    <a class="m-auto navbar-brand" href="{{url('/')}}">
       <img src="assets/imgs/logo.svg" class="brand-img" alt="">
       <span class="brand-txt">Food Hut</span>
     </a>
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#blog">Blog<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#blog">Food<span class="sr-only">(current)</span></a>
       </li>
 
       @if (Route::has('login'))
