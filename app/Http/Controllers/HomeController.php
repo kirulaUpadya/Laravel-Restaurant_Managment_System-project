@@ -14,6 +14,8 @@ use App\Models\Cart;
 
 use App\Models\Order;
 
+use App\Models\Book;
+
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Str;
@@ -128,6 +130,23 @@ class HomeController extends Controller
 
             $data->delete();
         }
+
+        return redirect()->back();
+    }
+
+    public function book_table(Request $request)
+    {
+        $data = new Book;
+
+        $data->phone = $request->phone;
+
+        $data->guest = $request->n_guest;
+
+        $data->time = $request->time;
+
+        $data->date = $request->date;
+
+        $data->save();
 
         return redirect()->back();
     }
