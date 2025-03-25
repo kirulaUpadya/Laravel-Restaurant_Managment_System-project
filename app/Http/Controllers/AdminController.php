@@ -10,6 +10,8 @@ use App\Models\Food;
 
 use App\Models\Order;
 
+use App\Models\Book;
+
 class AdminController extends Controller
 {
     public function add_food()
@@ -116,5 +118,12 @@ class AdminController extends Controller
         $data->save();
 
         return redirect()->back();
+    }
+
+    public function reservation()
+    {
+        $book = Book::all();
+
+        return view('admin.reservation', compact('book'));
     }
 }
