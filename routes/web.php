@@ -30,6 +30,8 @@ route::get('/remove_cart/{id}', [HomeController::class, 'remove_cart']);
 
 route::post('/confirm_order', [HomeController::class, 'confirm_order']);
 
+route::get('/orders', [AdminController::class, 'orders']);
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
